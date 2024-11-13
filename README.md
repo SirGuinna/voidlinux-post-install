@@ -33,7 +33,9 @@ sudo wpa_supplicant -B -i wlo1 -c /etc/wpa_supplicant.conf
 ```shellscript
 sudo dhclient wlo1
 ```
-<br>
+
+---
+
 ETHERNET CONNECTION
 ```shellscript
 ip link
