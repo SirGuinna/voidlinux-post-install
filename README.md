@@ -111,13 +111,13 @@ sudo ln -sf /etc/sv/networkmanager /var/service
 sudo ln -sf /etc/sv/dbus /var/service
 ```
 ```shellscript
-sudo ln -sf /etc/sv/lightdm /var/service
-```
-```shellscript
 sudo ln -sf /etc/sv/elogind /var/service
 ```
 ```shellscript
 sudo ln -sf /etc/sv/acpid /var/service
+```
+```shellscript
+sudo ln -sf /etc/sv/lightdm /var/service
 ```
 
 

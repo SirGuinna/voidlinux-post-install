@@ -6,7 +6,7 @@ import sys
 # color1 -> cor preenchimento indicador de desktop ativo 
 # color2 -> background i3blocks
 # color3 -> cor font inativa i3blocks ind. desktop / aba inativa
-# color4 -> cor indicador resize / ugencia
+# color4 -> cor indicador resize / urgencia
 # color5 -> cor borda indicador ativa desktop 
 # color6 -> cor fonte aba ativa
 # color7 -> cor fonte indicador desktop ativo

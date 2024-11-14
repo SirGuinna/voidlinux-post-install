@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONFIG_DIR="$HOME/.config"
-ROFI_THEME_DIR="/usr/share/rofi/themes"
+ROFI_DIR="/usr/share/rofi/themes"
 
 # Verifica se o script está sendo executado com permissões de root
 if [ "$(id -u)" -ne 0 ]; then
@@ -125,7 +125,10 @@ copiar_configs() {
     # Copia configuração do i3blocks e temas do rofi, substituindo arquivos existentes caso tenha
     cp -vf ./.i3blocks.conf "$HOME/"
     cp -rvf ./i3 "$CONFIG_DIR/"
-    cp -rvf ./rofi-themes/* "$ROFI_THEME_DIR/"
+    cp -rvf ./rofi-themes/* "$ROFI_DIR/"
+
+    # Recarrega o i3 para aplicar mudanças
+    sudo i3-msg reload > /dev/null
     
     echo "Copies made successfully!"
 }
@@ -145,9 +148,6 @@ ativar_servicos() {
     sudo ln -sf /etc/sv/lightdm /var/service
     sudo ln -sf /etc/sv/elogind /var/service
     sudo ln -sf /etc/sv/acpid /var/service
-
-    # Recarrega o i3 para aplicar mudanças
-    sudo i3-msg reload > /dev/null
 }
 
 ## ICONES para i3blocks -> https://fontawesome.com/v5/cheatsheet

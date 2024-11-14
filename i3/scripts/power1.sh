@@ -1,12 +1,12 @@
 #!/bin/bash
-selected=$(echo " reiniciar
- desligar
- fazer logout
-cancelar" | rofi -dmenu -p "MENU DA SESSÃO")
+selected=$(echo " Reboot
+ Shutdown
+ Logout
+Cancel" | rofi -dmenu -p "MENU DA SESSÃO")
 [[ -z $selected ]] && exit
 case $selected in
-" reiniciar")reboot;;
-" desligar")shutdown now;;
-" fazer logout")i3-msg exit;;
+" Reboot")reboot;;
+" Shutdown")shutdown now;;
+" Logout")i3-msg exit;;
 *)echo "Nada a fazer....";; 
 esac

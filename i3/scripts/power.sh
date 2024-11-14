@@ -2,13 +2,13 @@
 echo "POWER"
 
 powermenu(){
-v=$(zenity --list --title="POWER" --text="POWER MANEGER" --radiolist --column="" --column="OPÇÕES" "" "DESLIGAR SISTEMA" "" "REINICIAR SISTEMA")
-if [ "$v" == "DESLIGAR SISTEMA" ];then
+v=$(zenity --list --title="POWER" --text="POWER MANEGER" --radiolist --column="" --column="OPTIONS" "" "SHUTDOWN" "" "REBOOT")
+if [ "$v" == "SHUTDOWN" ];then
 shutdown now
-elif [ "$v" == "REINICIAR SISTEMA" ];then
+elif [ "$v" == "REBOOT" ];then
 reboot
 else
-zenity --info --title=INFO --text="NENHUMA AÇÃO SELECIONADA" --ellipsize
+zenity --info --title=INFO --text="NO ACTION" --ellipsize
 fi
 }
 
