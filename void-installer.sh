@@ -24,16 +24,16 @@ verificar_conexao() {
         echo "X"
         echo "# # # # # # # # # # # # # # WIFI CONNECTION # # # # # # # # # # # # # # #"
         echo "#                       sudo ip link set wlo1 up                        #"
-        echo "#  wpa_passphrase "SSID" "password" | sudo tee /etc/wpa_supplicant.conf #"
+        echo "#  wpa_passphrase "SSID" "PASSWORD" | sudo tee /etc/wpa_supplicant.conf #"
         echo "#       sudo wpa_supplicant -B -i wlo1 -c /etc/wpa_supplicant.conf      #"
         echo "#                          sudo dhclient wlo1                           #"
-        echo "# # # # # # # # # # # # # # # # # # # ! # # # # # # # # # # # # # # # # #"
-        echo "X"
+        echo "# # # # # # # # # # # # # # # # # # ! # # # # # # # # # # # # # # # # # #"
+        echo "                                                                         "
         echo "# # # # # # # # # # # # # ETHERNET CONNECTION # # # # # # # # # # # # # #"
         echo "#                              ip link                                  #"
         echo "#                  sudo ip link set YOUR_CONNECTION up                  #"
         echo "#                     sudo dhclient YOUR_CONNECTION                     #"
-        echo "# # # # # # # # # # # # # # # # # # # ! # # # # # # # # # # # # # # # # #"
+        echo "# # # # # # # # # # # # # # # # # # ! # # # # # # # # # # # # # # # # # #"
         while true; do
             read -p "Press Enter to try again or Ctrl+C to exit..."
             if ping -q -c 1 -W 1 google.com >/dev/null; then
@@ -119,13 +119,13 @@ copiar_configs() {
     cp -vf ./compton.conf "$CONFIG_DIR/"
     cp -vf ./picom.conf "$CONFIG_DIR/"
 
-    # Atualiza cache de fontes
-    fc-cache -fv
-
     # Copia configuração do i3blocks e temas do rofi, substituindo arquivos existentes caso tenha
     cp -vf ./.i3blocks.conf "$HOME/"
     cp -rvf ./i3 "$CONFIG_DIR/"
     cp -rvf ./rofi-themes/* "$ROFI_DIR/"
+
+    # Atualiza cache de fontes
+    fc-cache -fv
 
     # Recarrega o i3 para aplicar mudanças
     sudo i3-msg reload > /dev/null
