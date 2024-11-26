@@ -137,17 +137,18 @@ copiar_configs() {
 instalar_fish_shell() {
     echo "Installing Fish Shell..."
     curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-    echo "Instalation made successfully!"
+    echo "Instalation Fish Shell made successfully!"
 }
 
 # Ativa serviços essenciais
 ativar_servicos() {
-    echo "Iniciando serviços essenciais junto com o sistema..."
+    echo "Configuring essential services to start along with the system..."
     sudo ln -sf /etc/sv/networkmanager /var/service
     sudo ln -sf /etc/sv/dbus /var/service
     sudo ln -sf /etc/sv/lightdm /var/service
     sudo ln -sf /etc/sv/elogind /var/service
     sudo ln -sf /etc/sv/acpid /var/service
+    echo "Essential services successfully configured!"
 }
 
 ## ICONES para i3blocks -> https://fontawesome.com/v5/cheatsheet
