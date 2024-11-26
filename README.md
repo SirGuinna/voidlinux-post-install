@@ -126,7 +126,16 @@ sudo ln -sf /etc/sv/lightdm /var/service
 
 ## Script de Instalação Automática
 ```shellscript
-git clone https://github.com/SirGuinna/voidlinux-post-install;cd voidlinux-post-install;chmod +x void-installer.sh;./void-installer.sh
+git clone https://github.com/SirGuinna/voidlinux-post-install
+```
+```shellscript
+cd voidlinux-post-install
+```
+```shellscript
+chmod +x void-installer.sh
+```
+```shellscript
+./void-installer.sh
 ```
 
 ## Use o theme-selector.py para escolher um tema predefinido
